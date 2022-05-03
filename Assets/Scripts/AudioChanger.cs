@@ -13,6 +13,7 @@ public class AudioChanger : MonoBehaviour
 
     public AudioClip huTao;
     public AudioClip inazuma;
+    public AudioClip onay;
     public AudioSource current;
 
     public void Start()
@@ -32,6 +33,11 @@ public class AudioChanger : MonoBehaviour
         if (inazuma != null)
         {
             _imageToAudio["Ayaka"] = inazuma;
+        }
+
+        if (onay != null)
+        {
+            _imageToAudio["Onay"] = onay;
         }
     }
 
