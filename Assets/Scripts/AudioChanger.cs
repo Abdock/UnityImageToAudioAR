@@ -50,7 +50,6 @@ public class AudioChanger : MonoBehaviour
         Debug.Log(theme);
         if (theme != null)
         {
-            Debug.Log(current.clip != _imageToAudio[theme]);
             if (current.clip != _imageToAudio[theme])
             {
                 current.clip = _imageToAudio[theme];
