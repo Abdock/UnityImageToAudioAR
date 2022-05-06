@@ -63,6 +63,7 @@ public class TrueOrFalse : MonoBehaviour
         questionTextPlace.color = Color.yellow;
         FillPrime();
         FillFibonacci();
+        questionTextPlace.text = _questions.Keys.ToList()[_random.Next(_questions.Count)];
         if (_filter != null)
         {
             Debug.Log("Success");
@@ -79,6 +80,8 @@ public class TrueOrFalse : MonoBehaviour
                 return;
             }
 
+            _userGiveAnswer = false;
+            questionTextPlace.color = Color.yellow;
             questionTextPlace.text = _questions.Keys.ToList()[_random.Next(_questions.Count)];
             _passedTime = 0;
         }
@@ -88,7 +91,7 @@ public class TrueOrFalse : MonoBehaviour
         if (answer != null)
         {
             bool ans = answer.ToLower() == "correct";
-            questionTextPlace.color = _questions[_question] == ans ? Color.green : Color.red;
+            questionTextPlace.color = _questions[questionTextPlace.text] == ans ? Color.green : Color.red;
             _userGiveAnswer = true;
         }
     }
